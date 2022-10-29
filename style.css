@@ -1,0 +1,293 @@
+/* Main General Stuff */
+
+html, div, button, h1, p, input, body {
+  cursor: url('assets/cursor.png'), default;
+}
+
+body {
+  background-color: #2F4858;
+}
+
+#main {
+  margin: auto;
+  margin-top: 10vh;
+  width: 50vh;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+div.row {
+  display: flex;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  //padding: 2vh;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 4vh;
+}
+
+/* Draw area */
+
+.cell {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+}
+
+/* Options Row */
+
+.top-option {
+  margin-bottom: 1vh;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.top-option:hover {
+  filter: brightness(70%);
+  transition: 0.3s;
+}
+
+#allWhite {
+  background-color: white;
+}
+
+#allBlack {
+  background-color: #000000;
+  color: white;
+}
+
+#settings {
+  background-color: #3F88C5;
+  color: white;
+}
+
+#random {
+  background-color: #3626A7;
+  color: white;
+}
+
+#export {
+  background-color: #FFBE0B;
+  color: black;
+}
+
+#output-page {
+  background-color: #F26419;
+}
+
+#export-tray {
+  margin-right: 1vh;
+}
+
+/* Export Page */
+
+#code {
+  font-family: Consolas,monaco,monospace;
+  margin: 0.5vh;
+  margin-bottom: 0;
+  padding: 1vh;
+  font-size: 4vh;
+  color: rgb(0, 0, 0);
+  background-color: #EADEDA;
+  transition: 0.2s;
+  margin-top: 2vh;
+  user-select: none;
+}
+
+#code:active {
+  filter: brightness(70%);
+  transition: none;
+}
+
+#download-image {
+  background-color: #FAA613;
+  width: 100%;
+  height: 5vh;
+  margin-left: 1vh;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  margin-bottom: 1vh;
+}
+
+#download-image:hover {
+  filter: brightness(70%);
+  transition: 0.3s;
+}
+
+#image-box {
+  padding: 1vh;
+  margin: 0.5vh;
+  margin-top: 2vh;
+  background-color: #A20021;
+  display: flex;
+}
+
+#setting-page {
+  background-color: #3972ce;
+  padding: 2vh;
+}
+
+/*  */
+
+.full-page {
+  width: 46vh;
+  height: 66vh;
+  position: absolute;
+  margin-top: -70vh;
+  display: none;
+  padding: 2vh;
+  overflow: scroll;
+}
+
+.color {
+  width: 8vh;
+  height: 4vh;
+  border: none;
+  outline: none;
+  margin-top: 1vh;
+}
+
+#picker1,#picker2,#picker3 {
+  position: absolute;
+  margin-left: 32vh;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+.color-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  padding: 2vh;
+}
+
+
+#row0,#row1,#row2,#row3 {
+  background-color: rgb(29, 56, 116);
+  display: flex;
+  margin-bottom: 2vh;
+}
+
+button.settings-button {
+  height: 6vh;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(29, 56, 116);
+  transition: 0.3s;
+  font-size: 3vh;
+  margin-bottom: 2vh;
+}
+
+button.settings-button:hover {
+  background-color: rgb(20, 37, 73);
+  transition: 0.3s;
+}
+
+#refresh, #reset {
+  width: 100%;
+}
+
+#reset {
+  margin: 0;
+}
+
+#refresh-pixels, #reset-cursor {
+  width: 46vh;
+}
+
+
+#local-tray {
+  display: flex;
+}
+
+p.section-title {
+  font-size: 4vh;
+  padding-left: 0;
+  padding-bottom: 2vh;
+  margin: 0;
+}
+
+#color-section-title {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+#local-section {
+  background-color: rgba(0, 0, 0, 0.295);
+  padding: 2vh;
+  margin-bottom: 2vh;
+}
+
+#push, #pull {
+  width: 50%;
+  margin-bottom: 0;
+}
+
+#push {
+  margin-right: 1vh;
+}
+
+.close-button {
+  margin-right: 0vh;
+  height: 4vh;
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  right:2vh;
+  top: 2vh;
+  font-size: 3vh;
+  opacity: 0.3;
+}
+
+.close-button:hover {
+  opacity: 1;
+}
+
+#setting-page-title {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 4vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+#row0 {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#color-section {
+  background-color: rgba(0, 0, 0, 0.295);
+  margin-bottom: 2vh;
+  padding: 2vh;
+}
+
+.full-page {
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none;  // Firefox
+}
+.full-page::-webkit-scrollbar { 
+    display: none;  // Safari and Chrome
+}
+
+#Canvas {
+  background-color: red;
+}

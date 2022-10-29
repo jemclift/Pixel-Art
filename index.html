@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Pixel Art</title>
+	<link href="assets/reset.css" rel="stylesheet" type="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+	<link rel="apple-touch-icon" href="assets/Icon-App-40x40@3x.png" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+</head>
+
+<body>
+	<div id="main">
+		<div class="row">
+			<button id="allWhite" class="top-option cell" onclick="resetAll(0)" style="background-color: rgb(255, 255, 255); color: black;">White</button>
+        <button id="allBlack" class="top-option cell" onclick="resetAll(1)" style="background-color: rgb(0, 0, 0); color: white;">Black</button>
+        <button id="random" class="top-option cell" onclick="random()">Random</button>
+        <button id="settings" class="top-option cell" onclick="settings()">Settings</button>
+        <button id="export" class="top-option cell" onclick="Export()">Export</button>
+      </div>
+      <div class="row" id="r1">
+        <button id="a1" class="cell" onclick="flipPixel('a1')" ></button>
+        <button id="a2" class="cell" onclick="flipPixel('a2')"></button>
+        <button id="a3" class="cell" onclick="flipPixel('a3')"></button>
+        <button id="a4" class="cell" onclick="flipPixel('a4')"></button>
+        <button id="a5" class="cell" onclick="flipPixel('a5')"></button>
+      </div>
+      <div class="row" id="r2">
+        <button id="b1" class="cell" onclick="flipPixel('b1')"></button>
+        <button id="b2" class="cell" onclick="flipPixel('b2')"></button>
+        <button id="b3" class="cell" onclick="flipPixel('b3')"></button>
+        <button id="b4" class="cell" onclick="flipPixel('b4')"></button>
+        <button id="b5" class="cell" onclick="flipPixel('b5')"></button>
+      </div>
+      <div class="row" id="r3">
+        <button id="c1" class="cell" onclick="flipPixel('c1')"></button>
+        <button id="c2" class="cell" onclick="flipPixel('c2')"></button>
+        <button id="c3" class="cell" onclick="flipPixel('c3')"></button>
+        <button id="c4" class="cell" onclick="flipPixel('c4')"></button>
+        <button id="c5" class="cell" onclick="flipPixel('c5')"></button>
+      </div>
+      <div class="row" id="r4">
+        <button id="d1" class="cell" onclick="flipPixel('d1')"></button>
+        <button id="d2" class="cell" onclick="flipPixel('d2')"></button>
+        <button id="d3" class="cell" onclick="flipPixel('d3')"></button>
+        <button id="d4" class="cell" onclick="flipPixel('d4')"></button>
+        <button id="d5" class="cell" onclick="flipPixel('d5')"></button>
+      </div>
+      <div class="row" id="r5">
+        <button id="e1" class="cell" onclick="flipPixel('e1')"></button>
+        <button id="e2" class="cell" onclick="flipPixel('e2')"></button>
+        <button id="e3" class="cell" onclick="flipPixel('e3')"></button>
+        <button id="e4" class="cell" onclick="flipPixel('e4')"></button>
+        <button id="e5" class="cell" onclick="flipPixel('e5')"></button>
+      </div>
+      <div class="row" id="r6">
+        <button id="f1" class="cell" onclick="flipPixel('f1')"></button>
+        <button id="f2" class="cell" onclick="flipPixel('f2')"></button>
+        <button id="f3" class="cell" onclick="flipPixel('f3')"></button>
+        <button id="f4" class="cell" onclick="flipPixel('f4')"></button>
+        <button id="f5" class="cell" onclick="flipPixel('f5')"></button>
+      </div>
+      <div class="row" id="r7">
+        <button id="g1" class="cell" onclick="flipPixel('g1')"></button>
+        <button id="g2" class="cell" onclick="flipPixel('g2')"></button>
+        <button id="g3" class="cell" onclick="flipPixel('g3')"></button>
+        <button id="g4" class="cell" onclick="flipPixel('g4')"></button>
+        <button id="g5" class="cell" onclick="flipPixel('g5')"></button>
+      </div>
+
+      <!-- Output Page -->
+      <div id="output-page" class="full-page" style="display: none;">
+
+        <h1 id="setting-page-title">Output</h1>
+        <button class="close-button" onclick="document.getElementById('output-page').style.display = 'none'; document.getElementById('setting-page').scrollTo(0, 0)">╳</button>
+        <p id="code" onclick="copy()">The actual code</p>
+        <div id="image-box">
+          <canvas width="100" height="140" id="Canvas"></canvas>
+          <div id='export-tray'>
+            <button id="download-image"onclick="downloadImage('png')">Download Image as PNG</button>
+            <button id="download-image"onclick="downloadImage('jpg')">Download Image as JPG</button>
+            <button id="download-image"onclick="downloadImage('svg')">Download Image as SVG</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Settings Page -->
+      <div id="setting-page" class="full-page">
+
+        <div id="row0">
+          <h1 id="setting-title">Settings</h1>
+          <button class="close-button" onclick="document.getElementById('setting-page').style.display = 'none'">╳</button>
+        </div>
+
+        <div id="color-section">
+          <p id="color-section-title" class="section-title">Colors</p>
+          <div id="row1">
+            <p class="color-text">Color 1</p>
+            <!-- <input id="picker1" class="color" type="color" value="#ffffff" onchange="alert('Alertttt')"> -->
+            <input id="picker1" class="color" type="color" value="#ffffff">
+          </div>
+          <div id="row2">
+            <p class="color-text">Color 2</p>
+            <input id="picker2" class="color" type="color" value="#000000">
+          </div>
+          <div id="row2">
+            <p class="color-text">Background</p>
+            <input id="picker3" class="color" type="color" value="#2F4858">
+          </div>
+          <button id="refresh" class="settings-button" onclick="RefreshColors()">Refresh Colors ↻</button>
+          <button id="reset" class="settings-button" onclick="ResetColors()">Reset Colors</button>
+        </div>
+
+        <!-- <div id="row3">
+          <p>Option</p>
+        </div> -->
+
+        <!-- Local Section -->
+        <div id="local-section">
+          <p class="section-title">Local Storage</p>
+          <div id="local-tray">
+            <button id="push" class="settings-button" onclick="pushToLocal()">Push ↑</button>
+            <button id="pull" class="settings-button" onclick="pullFromLocal()">Pull ↓</button>
+          </div>
+        </div>
+
+        <button id="refresh-pixels" class="settings-button" onclick="cleanPixels()">Clean Pixels</button>
+        <button id="reset-cursor" class="settings-button" onclick="resetCursor()">Reset Cursor</button>
+
+        <p>Jem Clift 2020 ©</p>
+      </div>
+    </div>
+    <script src="assets/colour.js"></script>
+    <script src="script.js"></script>
+  
+</body></html>
